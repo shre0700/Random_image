@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style_img.css">
+</head>
+<body>
+    <h1>Random Image Feed</h1>
+    <div class="display_image"></div>
+    <script>
+        const display_image = document.querySelector(".display_image");
+        const url = "https://source.unsplash.com/random/";
+        const rows = 5;
+        const random_num = () => Math.floor(Math.random()*10) +300;
+        const random_size = () => `${random_num()} * ${random_num()}`;
+        for(var i=0; i<rows*3; i++){
+            const images = document.createElement("img");
+            images.src = `${url}${random_size()}`;
+            display_image.appendChild(images);
+        }
+    </script>
+</body>
+</html>
